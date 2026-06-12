@@ -15,34 +15,59 @@
         <div class="tree tree-5"></div>
     </div>
 
-    <div class="container">
-        <!-- ========== HEADER ========== -->
-        <header class="header">
-            <nav class="navbar">
-                <h1 class="logo">🌿 전시의 숲</h1>
-                <ul class="nav-links">
-                    <li><a href="#intro">소개</a></li>
-                    <li><a href="#projects">작품</a></li>
-                    <li><a href="#tech">기술</a></li>
-                    <li><a href="#contact">연락</a></li>
-                </ul>
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="profile-section">
+                <div class="profile-avatar">🌿</div>
+                <h1 class="profile-name">전시의 숲</h1>
+                <p class="profile-title">전시기획자</p>
+                <p class="profile-bio">공간을 통해 감정을 전달하고<br>전시를 통해 이야기를 나눕니다</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#home" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">홈</span>
+                </a>
+                <a href="#projects" class="nav-item">
+                    <span class="nav-icon">🎨</span>
+                    <span class="nav-text">작품</span>
+                </a>
+                <a href="#about" class="nav-item">
+                    <span class="nav-icon">ℹ️</span>
+                    <span class="nav-text">소개</span>
+                </a>
+                <a href="#contact" class="nav-item">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-text">연락</span>
+                </a>
             </nav>
-        </header>
 
-        <!-- ========== INTRO / HERO SECTION ========== -->
-        <section class="hero" id="intro">
-            <div class="hero-content">
-                <div class="intro-text">
-                    <h2 class="greeting">안녕하세요</h2>
-                    <div class="animated-title">
-                        <span class="title-word">전시</span>
-                        <span class="title-word">공간을</span>
-                        <span class="title-word">만드는</span>
-                    </div>
-                    <p class="dream-text">전시기획자입니다</p>
+            <div class="sidebar-footer">
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">🔗</a>
                 </div>
+                <p class="copyright">© 2024</p>
+            </div>
+        </div>
+    </aside>
 
-                <div class="animation-container">
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main-content">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <h2 class="hero-title">
+                    <span class="title-line">전시 공간을</span>
+                    <span class="title-line">만드는</span>
+                    <span class="title-line highlight-line">전시기획자</span>
+                </h2>
+                <p class="hero-subtitle">작은 전시부터 대규모 프로젝트까지,<br>정성스러운 경험을 만들어갑니다.</p>
+                
+                <div class="floating-elements">
                     <div class="floating-plant">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <path d="M 30 60 L 35 85 L 65 85 L 70 60 Z" fill="#D4A574" stroke="#8B6F47" stroke-width="2"/>
@@ -56,339 +81,317 @@
                             <ellipse cx="50" cy="15" rx="6" ry="10" fill="#4A9D3A"/>
                         </svg>
                     </div>
-
                     <div class="falling-leaves">
                         <div class="leaf leaf-1">🍃</div>
                         <div class="leaf leaf-2">🍃</div>
                         <div class="leaf leaf-3">🍃</div>
-                        <div class="leaf leaf-4">🍃</div>
-                        <div class="leaf leaf-5">🍃</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="intro-description">
-                <p>
-                    ”막연한 감동을 데이터로 구조화하여 숲의 흐름을 설계하고,<br>
-                   공학적 디테일로 나무의 오차를 제거하는 전략적 전시 기획자".<br>
-                    <span class="highlight">작은 전시부터 대규모 프로젝트까지</span><br>
-                    정성스러운 경험을 만들어갑니다.
-                </p>
+                <div class="scroll-hint">
+                    <p>스크롤해서 작품 보기 ↓</p>
+                </div>
             </div>
         </section>
 
-        <div class="divider">
-            <span class="divider-leaf">🌿</span>
-        </div>
-
-        <div class="scroll-indicator">
-            <p>아래로 스크롤 ↓</p>
-            <div class="scroll-arrow">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
-        <!-- ========== PROJECTS SECTION ========== -->
+        <!-- PROJECTS GALLERY SECTION -->
         <section class="projects" id="projects">
-            <h2 class="section-title">프로젝트</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <div class="projects-header">
+                <h2 class="section-title">전시 프로젝트</h2>
+                <p class="section-subtitle">큐레이션한 경험들</p>
+            </div>
+
+            <div class="gallery">
+                <!-- PROJECT 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp1" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#A8D5BA;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad1)"/>
-                            <circle cx="150" cy="100" r="40" fill="#4A9D3A" opacity="0.7"/>
-                            <circle cx="120" cy="80" r="30" fill="#3D7D2E" opacity="0.6"/>
-                            <circle cx="180" cy="80" r="30" fill="#2D5016" opacity="0.6"/>
-                            <path d="M 150 30 Q 130 60 150 100" stroke="#8B6F47" stroke-width="3" fill="none"/>
-                            <ellipse cx="140" cy="50" rx="8" ry="12" fill="#3D7D2E"/>
-                            <ellipse cx="160" cy="50" rx="8" ry="12" fill="#4A9D3A"/>
-                            <text x="150" y="160" font-size="24" font-weight="bold" text-anchor="middle" fill="#2D5016">감정의 방</text>
+                            <rect width="400" height="500" fill="url(#gp1)"/>
+                            <circle cx="200" cy="150" r="60" fill="#4A9D3A" opacity="0.8"/>
+                            <circle cx="150" cy="120" r="45" fill="#3D7D2E" opacity="0.7"/>
+                            <circle cx="250" cy="120" r="45" fill="#2D5016" opacity="0.7"/>
+                            <path d="M 200 60 Q 170 100 200 180" stroke="#8B6F47" stroke-width="4" fill="none"/>
+                            <ellipse cx="185" cy="100" rx="12" ry="18" fill="#3D7D2E"/>
+                            <ellipse cx="215" cy="100" rx="12" ry="18" fill="#4A9D3A"/>
+                            <rect x="100" y="250" width="200" height="200" fill="#F5F1E8" opacity="0.6"/>
+                            <text x="200" y="380" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D5016">감정의 방</text>
+                            <text x="200" y="430" font-size="20" text-anchor="middle" fill="#3D7D2E">색채와 감정의 관계</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>감정의 방</h3>
-                        <p class="project-date">2024년 1월</p>
-                        <p class="project-description">색채와 감정의 관계를 탐구하는 인터랙티브 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">색채</span>
-                            <span class="tag">감정</span>
-                            <span class="tag">인터랙티브</span>
+                        <p class="gallery-date">2024년 1월</p>
+                        <p class="gallery-description">색채와 감정의 관계를 탐구하는 인터랙티브 전시입니다. 관객이 직접 색을 선택하고 그 색이 표현하는 감정을 경험하는 공간입니다.</p>
+                        <div class="gallery-tags">
+                            <span>색채</span>
+                            <span>감정</span>
+                            <span>인터랙티브</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- PROJECT 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp2" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#E8F5E9;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad2)"/>
-                            <circle cx="100" cy="60" r="25" fill="#FFD700" opacity="0.8"/>
-                            <circle cx="150" cy="50" r="35" fill="#FFA500" opacity="0.7"/>
-                            <circle cx="200" cy="70" r="20" fill="#FFD700" opacity="0.6"/>
-                            <path d="M 80 120 L 220 120 L 220 180 L 80 180 Z" fill="#A8D5BA" opacity="0.5"/>
-                            <rect x="90" y="130" width="30" height="40" fill="#2D5016"/>
-                            <rect x="160" y="130" width="30" height="40" fill="#2D5016"/>
-                            <text x="150" y="160" font-size="24" font-weight="bold" text-anchor="middle" fill="#2D5016">빛의 정원</text>
+                            <rect width="400" height="500" fill="url(#gp2)"/>
+                            <circle cx="150" cy="100" r="35" fill="#FFD700" opacity="0.9"/>
+                            <circle cx="200" cy="80" r="50" fill="#FFA500" opacity="0.8"/>
+                            <circle cx="260" cy="110" r="30" fill="#FFD700" opacity="0.7"/>
+                            <path d="M 120 180 L 280 180 L 280 480 L 120 480 Z" fill="#A8D5BA" opacity="0.5"/>
+                            <rect x="140" y="220" width="40" height="80" fill="#2D5016"/>
+                            <rect x="220" y="220" width="40" height="80" fill="#2D5016"/>
+                            <circle cx="180" cy="300" r="15" fill="#4A9D3A" opacity="0.6"/>
+                            <circle cx="220" cy="350" r="12" fill="#3D7D2E" opacity="0.6"/>
+                            <text x="200" y="450" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D5016">빛의 정원</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>빛의 정원</h3>
-                        <p class="project-date">2023년 11월</p>
-                        <p class="project-description">자연 속 빛의 움직임을 담은 미디어 아트 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">미디어</span>
-                            <span class="tag">자연</span>
-                            <span class="tag">빛</span>
+                        <p class="gallery-date">2023년 11월</p>
+                        <p class="gallery-description">자연 속 빛의 움직임을 담은 미디어 아트 전시입니다. 프로젝션 맵핑과 사운드스케이프가 결합된 몰입형 경험입니다.</p>
+                        <div class="gallery-tags">
+                            <span>미디어</span>
+                            <span>자연</span>
+                            <span>빛</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- PROJECT 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp3" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#8B6F47;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad3)"/>
-                            <rect x="50" y="40" width="50" height="120" fill="#A8D5BA" stroke="#2D5016" stroke-width="2"/>
-                            <rect x="120" y="60" width="50" height="100" fill="#4A9D3A" stroke="#2D5016" stroke-width="2"/>
-                            <rect x="190" y="80" width="50" height="80" fill="#3D7D2E" stroke="#2D5016" stroke-width="2"/>
-                            <circle cx="75" cy="30" r="8" fill="#E8F5E9"/>
-                            <circle cx="145" cy="30" r="8" fill="#E8F5E9"/>
-                            <circle cx="215" cy="30" r="8" fill="#E8F5E9"/>
-                            <text x="150" y="180" font-size="20" font-weight="bold" text-anchor="middle" fill="white">시간의 흔적</text>
+                            <rect width="400" height="500" fill="url(#gp3)"/>
+                            <rect x="80" y="80" width="70" height="200" fill="#A8D5BA" stroke="#2D5016" stroke-width="3"/>
+                            <rect x="165" y="120" width="70" height="160" fill="#4A9D3A" stroke="#2D5016" stroke-width="3"/>
+                            <rect x="250" y="160" width="70" height="120" fill="#3D7D2E" stroke="#2D5016" stroke-width="3"/>
+                            <circle cx="115" cy="60" r="12" fill="#E8F5E9"/>
+                            <circle cx="200" cy="60" r="12" fill="#E8F5E9"/>
+                            <circle cx="285" cy="60" r="12" fill="#E8F5E9"/>
+                            <text x="200" y="400" font-size="48" font-weight="bold" text-anchor="middle" fill="white">시간의 흔적</text>
+                            <text x="200" y="450" font-size="20" text-anchor="middle" fill="#E8F5E9">설치 미술</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>시간의 흔적</h3>
-                        <p class="project-date">2023년 9월</p>
-                        <p class="project-description">시간의 경과와 변화를 시각화한 설치 미술 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">설치</span>
-                            <span class="tag">시간</span>
-                            <span class="tag">변화</span>
+                        <p class="gallery-date">2023년 9월</p>
+                        <p class="gallery-description">시간의 경과와 변화를 시각화한 설치 미술 전시입니다. 나무 재료를 활용하여 시간의 층화를 표현했습니다.</p>
+                        <div class="gallery-tags">
+                            <span>설치</span>
+                            <span>시간</span>
+                            <span>변화</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- PROJECT 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp4" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#A8D5BA;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad4)"/>
-                            <path d="M 60 180 Q 80 140 100 100 Q 120 60 150 40 Q 180 60 200 100 Q 220 140 240 180" stroke="#2D5016" stroke-width="4" fill="none"/>
-                            <circle cx="80" cy="140" r="6" fill="#4A9D3A"/>
-                            <circle cx="120" cy="80" r="6" fill="#4A9D3A"/>
-                            <circle cx="180" cy="80" r="6" fill="#4A9D3A"/>
-                            <circle cx="220" cy="140" r="6" fill="#4A9D3A"/>
-                            <text x="150" y="175" font-size="22" font-weight="bold" text-anchor="middle" fill="#2D5016">목소리의 풍경</text>
+                            <rect width="400" height="500" fill="url(#gp4)"/>
+                            <path d="M 100 320 Q 120 240 150 180 Q 170 140 200 100 Q 230 140 250 180 Q 280 240 300 320" stroke="#2D5016" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            <circle cx="120" cy="250" r="8" fill="#4A9D3A"/>
+                            <circle cx="160" cy="160" r="8" fill="#4A9D3A"/>
+                            <circle cx="240" cy="160" r="8" fill="#4A9D3A"/>
+                            <circle cx="280" cy="250" r="8" fill="#4A9D3A"/>
+                            <path d="M 100 350 L 300 350" stroke="#8B6F47" stroke-width="3" stroke-dasharray="10,10"/>
+                            <text x="200" y="430" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D5016">목소리의 풍경</text>
+                            <text x="200" y="480" font-size="20" text-anchor="middle" fill="#3D7D2E">음향 예술</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>목소리의 풍경</h3>
-                        <p class="project-date">2023년 7월</p>
-                        <p class="project-description">음향 예술을 활용한 공간 경험 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">음향</span>
-                            <span class="tag">공간</span>
-                            <span class="tag">경험</span>
+                        <p class="gallery-date">2023년 7월</p>
+                        <p class="gallery-description">음향 예술을 활용한 공간 경험 전시입니다. 관객의 목소리가 공간을 채우고 변형되는 사운드 설치 미술입니다.</p>
+                        <div class="gallery-tags">
+                            <span>음향</span>
+                            <span>공간</span>
+                            <span>경험</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- PROJECT 5 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp5" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#D4A574;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad5)"/>
-                            <path d="M 80 120 L 100 60 L 120 120 M 130 140 L 150 70 L 170 140 M 180 130 L 200 65 L 220 130" stroke="#2D5016" stroke-width="3" fill="none"/>
-                            <circle cx="80" cy="120" r="5" fill="#4A9D3A"/>
-                            <circle cx="130" cy="140" r="5" fill="#4A9D3A"/>
-                            <circle cx="180" cy="130" r="5" fill="#4A9D3A"/>
-                            <text x="150" y="180" font-size="20" font-weight="bold" text-anchor="middle" fill="#2D5016">숨겨진 이야기</text>
+                            <rect width="400" height="500" fill="url(#gp5)"/>
+                            <path d="M 120 280 L 140 180 L 160 280 M 180 320 L 200 150 L 220 320 M 240 300 L 260 170 L 280 300" stroke="#2D5016" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <circle cx="120" cy="280" r="6" fill="#4A9D3A"/>
+                            <circle cx="180" cy="320" r="6" fill="#4A9D3A"/>
+                            <circle cx="240" cy="300" r="6" fill="#4A9D3A"/>
+                            <rect x="100" y="350" width="200" height="120" fill="#2D5016" opacity="0.3"/>
+                            <text x="200" y="420" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D5016">숨겨진 이야기</text>
+                            <text x="200" y="470" font-size="20" text-anchor="middle" fill="#3D7D2E">커뮤니티 전시</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>숨겨진 이야기</h3>
-                        <p class="project-date">2023년 5월</p>
-                        <p class="project-description">지역 문화와 역사를 담은 커뮤니티 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">문화</span>
-                            <span class="tag">역사</span>
-                            <span class="tag">커뮤니티</span>
+                        <p class="gallery-date">2023년 5월</p>
+                        <p class="gallery-description">지역 문화와 역사를 담은 커뮤니티 전시입니다. 주민들의 이야기를 수집하고 그것을 공간에 시각화했습니다.</p>
+                        <div class="gallery-tags">
+                            <span>문화</span>
+                            <span>역사</span>
+                            <span>커뮤니티</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- PROJECT 6 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <linearGradient id="gp6" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#A8D5BA;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <rect width="300" height="200" fill="url(#grad6)"/>
-                            <line x1="20" y1="100" x2="280" y2="100" stroke="#8B6F47" stroke-width="2" stroke-dasharray="5,5"/>
-                            <circle cx="50" cy="70" r="20" fill="#4A9D3A" opacity="0.7"/>
-                            <circle cx="150" cy="50" r="30" fill="#3D7D2E" opacity="0.7"/>
-                            <circle cx="250" cy="80" r="25" fill="#2D5016" opacity="0.7"/>
-                            <text x="150" y="170" font-size="20" font-weight="bold" text-anchor="middle" fill="#2D5016">경계를 넘다</text>
+                            <rect width="400" height="500" fill="url(#gp6)"/>
+                            <line x1="50" y1="200" x2="350" y2="200" stroke="#8B6F47" stroke-width="3" stroke-dasharray="8,8"/>
+                            <circle cx="80" cy="140" r="30" fill="#4A9D3A" opacity="0.8"/>
+                            <circle cx="200" cy="100" r="45" fill="#3D7D2E" opacity="0.8"/>
+                            <circle cx="320" cy="160" r="35" fill="#2D5016" opacity="0.8"/>
+                            <path d="M 80 280 Q 100 320 120 350" stroke="#4A9D3A" stroke-width="3" fill="none"/>
+                            <path d="M 200 300 Q 220 340 240 370" stroke="#3D7D2E" stroke-width="3" fill="none"/>
+                            <path d="M 320 280 Q 300 320 280 350" stroke="#2D5016" stroke-width="3" fill="none"/>
+                            <text x="200" y="440" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D5016">경계를 넘다</text>
                         </svg>
                     </div>
-                    <div class="project-info">
+                    <div class="gallery-info">
                         <h3>경계를 넘다</h3>
-                        <p class="project-date">2023년 3월</p>
-                        <p class="project-description">경계의 개념을 탐구하는 다학제적 전시입니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">경계</span>
-                            <span class="tag">개념</span>
-                            <span class="tag">융합</span>
+                        <p class="gallery-date">2023년 3월</p>
+                        <p class="gallery-description">경계의 개념을 탐구하는 다학제적 전시입니다. 미술, 음악, 과학이 만나는 융합 전시 프로젝트입니다.</p>
+                        <div class="gallery-tags">
+                            <span>경계</span>
+                            <span>개념</span>
+                            <span>융합</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="divider">
-            <span class="divider-leaf">🌿</span>
-        </div>
-
-        <!-- ========== TECH STACK SECTION ========== -->
-        <section class="tech-stack" id="tech">
-            <h2 class="section-title">기술 스택</h2>
-            <p class="tech-subtitle">전시기획자로서 활용하는 도구들</p>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <div class="tech-icon">🎨</div>
-                    <h3>Photoshop</h3>
-                    <p>이미지 편집 및 시각 자료 제작</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 85%"></div>
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2 class="section-title">기술 스택</h2>
+                <p class="section-subtitle">전시를 만드는 도구들</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>Photoshop</h3>
+                        <p>시각 자료 제작 및 편집</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🏗️</div>
-                    <h3>3D Max</h3>
-                    <p>공간 모델링 및 3D 시각화</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 80%"></div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🏗️</div>
+                        <h3>3D Max</h3>
+                        <p>공간 모델링 및 시각화</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">✨</div>
-                    <h3>UI/UX</h3>
-                    <p>사용자 경험 및 인터페이스 설계</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 88%"></div>
+                    <div class="skill-card">
+                        <div class="skill-icon">✨</div>
+                        <h3>UI/UX</h3>
+                        <p>사용자 경험 설계</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 88%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">💡</div>
-                    <h3>기획</h3>
-                    <p>개념 개발 및 큐레이션</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🎬</div>
-                    <h3>영상 제작</h3>
-                    <p>프로모션 영상 및 미디어 콘텐츠</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 78%"></div>
-                    </div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">💻</div>
-                    <h3>웹 기술</h3>
-                    <p>디지털 전시 및 포트폴리오</p>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 82%"></div>
+                    <div class="skill-card">
+                        <div class="skill-icon">💡</div>
+                        <h3>기획</h3>
+                        <p>개념 개발 및 큐레이션</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="divider">
-            <span class="divider-leaf">🌿</span>
-        </div>
-
-        <!-- ========== CONTACT SECTION ========== -->
+        <!-- CONTACT SECTION -->
         <section class="contact" id="contact">
-            <h2 class="section-title">연락하기</h2>
             <div class="contact-content">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="이름" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="이메일" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="제목" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="메시지를 입력하세요" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">전송하기</button>
-                </form>
+                <h2 class="section-title">연락하기</h2>
+                <p class="section-subtitle">함께 전시를 만들어봅시다</p>
 
-                <div class="contact-info">
-                    <div class="info-item">
-                        <h3>📍 위치</h3>
-                        <p>서울, 대한민국</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>📧 이메일</h3>
-                        <p>yjs64678@naver.com</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>📱 연락처</h3>
-                        <p>010-2842-0211</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>🔗 소셜</h3>
-                        <div class="social-links">
-                            <a href="#" target="_blank">Instagram</a>
-                            <a href="#" target="_blank">Portfolio</a>
+                <div class="contact-wrapper">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="이름" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="제목" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="메시지를 입력하세요" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">메시지 전송</button>
+                    </form>
+
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>📍 위치</h3>
+                            <p>서울, 대한민국</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>📧 이메일</h3>
+                            <p>contact@example.com</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>📱 연락처</h3>
+                            <p>010-1234-5678</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== FOOTER ========== -->
+        <!-- FOOTER -->
         <footer class="footer">
-            <p>&copy; 2024 전시의 숲. 🌿</p>
+            <p>&copy; 2024 전시의 숲. 모든 권리 보유. 🌿</p>
         </footer>
-    </div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
