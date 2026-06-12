@@ -12,7 +12,7 @@ function updateTitle() {
     const titleWordsElements = document.querySelectorAll('.title-word');
     titleWordsElements.forEach((word, index) => {
         word.style.animation = 'none';
-        word.offsetHeight; // Trigger reflow
+        word.offsetHeight;
         word.textContent = words[index];
         word.style.animation = `fadeInUp 1s ease-out ${index * 0.3}s forwards`;
     });
@@ -56,55 +56,23 @@ document.addEventListener('mousemove', (e) => {
 document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form values
-    const formData = new FormData(this);
-    
-    // Show success message
     const submitBtn = this.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = '전송 완료! ✓';
     submitBtn.style.background = 'var(--secondary-green)';
     
-    // Reset form
     this.reset();
     
-    // Restore button after 2 seconds
     setTimeout(() => {
         submitBtn.textContent = originalText;
         submitBtn.style.background = 'var(--accent-green)';
     }, 2000);
 });
 
-// ========== INTERSECTION OBSERVER FOR ANIMATIONS ========== 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-        }
-    });
-}, observerOptions);
-
-// Observe project cards, tech items, and contact items
-document.querySelectorAll('.project-card, .tech-item, .info-item').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-});
-
-// ========== CONSOLE MESSAGE ========== 
-console.log('%c전시의 숲', 'color: #4A9D3A; font-size: 20px; font-weight: bold;');
-console.log('%c전시기획자의 포트폴리오에 오신 것을 환영합니다 🌿', 'color: #2D5016; font-size: 14px;');
-console.log('%c전시를 통해 감정을 전달하고 공간을 통해 이야기를 나눕니다.', 'color: #3D7D2E; font-size: 12px;');
-
 // ========== ACTIVE NAV LINK ========== 
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-item');
     
     let current = '';
     sections.forEach(section => {
@@ -117,78 +85,133 @@ window.addEventListener('scroll', () => {
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
-            link.style.color = 'var(--accent-green)';
-        } else {
-            link.style.color = 'var(--text-dark)';
+            link.classList.add('active');
         }
     });
 });
 
-// ========== DYNAMIC LEAF FALLING ========== 
-function createFallingLeaf() {
-    const leaf = document.createElement('div');
-    leaf.textContent = '🍃';
-    leaf.style.position = 'fixed';
-    leaf.style.left = Math.random() * window.innerWidth + 'px';
-    leaf.style.top = '-20px';
-    leaf.style.fontSize = '2rem';
-    leaf.style.opacity = '0.7';
-    leaf.style.pointerEvents = 'none';
-    leaf.style.zIndex = '1';
-    
-    const duration = Math.random() * 3 + 4; // 4-7 seconds
-    const distance = Math.random() * 100 - 50; // -50 to 50px
-    
-    leaf.animate([
-        { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: '1' },
-        { transform: `translateY(${window.innerHeight + 20}px) translateX(${distance}px) rotate(360deg)`, opacity: '0' }
-    ], {
-        duration: duration * 1000,
-        easing: 'linear'
-    }).onfinish = () => leaf.remove();
-    
-    document.body.appendChild(leaf);
-}
+// ========== INTERSECTION OBSERVER FOR ANIMATIONS ========== 
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-// ========== LAZY LOADING FOR IMAGES ========== 
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0';
-                img.onload = () => {
-                    img.style.transition = 'opacity 0.3s ease';
-                    img.style.opacity = '1';
-                };
-                observer.unobserve(img);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.gallery-item, .skill-card, .info-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+});
+
+// ========== FILTER FUNCTIONALITY ========== 
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Get filter value
+        const filterValue = btn.getAttribute('data-filter');
+        
+        // Filter items
+        galleryItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            
+            if (filterValue === 'all' || itemCategory === filterValue) {
+                item.classList.remove('hidden');
+                item.style.opacity = '0';
+                item.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            } else {
+                item.classList.add('hidden');
             }
         });
     });
-    
-    document.querySelectorAll('.project-image img').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// ========== SKILL BAR ANIMATION ========== 
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const skillBars = entry.target.querySelectorAll('.skill-fill');
-            skillBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    bar.style.transition = 'width 0.8s ease';
-                    bar.style.width = bar.style.width;
-                }, index * 100);
-            });
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.tech-grid')?.forEach(grid => {
-    skillObserver.observe(grid);
 });
 
-console.log('%c🌿 All scripts loaded successfully!', 'color: #4A9D3A; font-size: 12px;');
+// ========== LIGHTBOX FUNCTIONALITY ========== 
+const lightboxModal = document.getElementById('lightboxModal');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+const galleryImages = document.querySelectorAll('[data-lightbox]');
+
+let currentImageIndex = 0;
+const imageUrls = [];
+
+// Collect all image SVGs
+galleryImages.forEach((img, index) => {
+    imageUrls.push(img.innerHTML);
+});
+
+// Open lightbox
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        currentImageIndex = index;
+        openLightbox();
+    });
+});
+
+function openLightbox() {
+    lightboxModal.classList.add('active');
+    const svgContent = imageUrls[currentImageIndex];
+    lightboxImage.innerHTML = `<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">${svgContent.replace(/<svg[^>]*>|<\/svg>/g, '')}</svg>`;
+}
+
+function closeLightbox() {
+    lightboxModal.classList.remove('active');
+}
+
+// Close on X button
+lightboxClose.addEventListener('click', closeLightbox);
+
+// Close on background click
+lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) {
+        closeLightbox();
+    }
+});
+
+// Next image
+lightboxNext.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+    openLightbox();
+});
+
+// Previous image
+lightboxPrev.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+    openLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (lightboxModal.classList.contains('active')) {
+        if (e.key === 'ArrowRight') {
+            lightboxNext.click();
+        } else if (e.key === 'ArrowLeft') {
+            lightboxPrev.click();
+        } else if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    }
+});
+
+// ========== CONSOLE MESSAGE ========== 
+console.log('%c전시의 숲', 'color: #4A9D3A; font-size: 20px; font-weight: bold;');
+console.log('%c전시기획자의 포트폴리오에 오신 것을 환영합니다 🌿', 'color: #2D5016; font-size: 14px;');
+console.log('%c막연한 감동을 데이터로 구조화하여 정성스러운 경험을 만들어갑니다.', 'color: #3D7D2E; font-size: 12px;');
+
+console.log('%c✨ 모든 기능이 로드되었습니다!', 'color: #4A9D3A; font-size: 12px; font-weight: bold;');
