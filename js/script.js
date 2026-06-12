@@ -1,5 +1,35 @@
-function changeColor() {
-    const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.background = randomColor;
+const text = "양준섭 | Exhibition Planner";
+
+const typing = document.getElementById("typing");
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,100);
+    }
 }
+
+typeWriter();
+
+setInterval(()=>{
+
+    const leaf = document.createElement("div");
+
+    leaf.classList.add("leaf");
+
+    leaf.style.left = Math.random()*100 + "vw";
+
+    document.body.appendChild(leaf);
+
+    setTimeout(()=>{
+        leaf.remove();
+    },10000);
+
+},500);
