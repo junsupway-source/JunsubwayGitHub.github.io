@@ -1,5 +1,3 @@
-
-
 :root {
     --primary-green: #2D5016;
     --secondary-green: #3D7D2E;
@@ -43,62 +41,67 @@ body {
 
 .tree {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.35;
 }
 
 .tree-1 {
-    width: 200px;
-    height: 300px;
-    left: 5%;
-    top: 10%;
+    width: 250px;
+    height: 350px;
+    left: 2%;
+    top: 5%;
     background: linear-gradient(180deg, var(--primary-green) 0%, var(--secondary-green) 100%);
     clip-path: polygon(50% 0%, 100% 38%, 82% 38%, 100% 100%, 0% 100%, 18% 38%, 0% 38%);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .tree-2 {
-    width: 250px;
-    height: 350px;
-    right: 8%;
-    top: 15%;
+    width: 280px;
+    height: 380px;
+    right: 3%;
+    top: 8%;
     background: linear-gradient(180deg, var(--accent-green) 0%, var(--secondary-green) 100%);
     clip-path: polygon(50% 0%, 100% 38%, 82% 38%, 100% 100%, 0% 100%, 18% 38%, 0% 38%);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .tree-3 {
-    width: 180px;
-    height: 270px;
-    left: 15%;
-    bottom: 20%;
+    width: 220px;
+    height: 320px;
+    left: 8%;
+    bottom: 15%;
     background: linear-gradient(180deg, var(--light-green) 0%, var(--primary-green) 100%);
     clip-path: polygon(50% 0%, 100% 38%, 82% 38%, 100% 100%, 0% 100%, 18% 38%, 0% 38%);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .tree-4 {
-    width: 220px;
-    height: 320px;
-    right: 12%;
-    bottom: 15%;
+    width: 260px;
+    height: 360px;
+    right: 5%;
+    bottom: 10%;
     background: linear-gradient(180deg, var(--secondary-green) 0%, var(--primary-green) 100%);
     clip-path: polygon(50% 0%, 100% 38%, 82% 38%, 100% 100%, 0% 100%, 18% 38%, 0% 38%);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .tree-5 {
-    width: 190px;
-    height: 280px;
-    left: 50%;
-    bottom: 10%;
+    width: 240px;
+    height: 340px;
+    left: 48%;
+    bottom: 8%;
     transform: translateX(-50%);
     background: linear-gradient(180deg, var(--accent-green) 0%, var(--secondary-green) 100%);
     clip-path: polygon(50% 0%, 100% 38%, 82% 38%, 100% 100%, 0% 100%, 18% 38%, 0% 38%);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .header {
     position: relative;
     padding: 2rem 0;
     z-index: 10;
-    background: rgba(245, 241, 232, 0.8);
+    background: rgba(245, 241, 232, 0.85);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .navbar {
@@ -404,14 +407,14 @@ body {
 /* ========== PROJECTS SECTION ========== */
 .projects {
     padding: 6rem 0;
-    background: rgba(232, 245, 233, 0.5);
+    background: rgba(232, 245, 233, 0.4);
 }
 
 .section-title {
     font-size: 2.5rem;
     text-align: center;
     color: var(--primary-green);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     position: relative;
 }
 
@@ -423,6 +426,13 @@ body {
     background: var(--accent-green);
     margin: 1rem auto 0;
     border-radius: 2px;
+}
+
+.tech-subtitle {
+    text-align: center;
+    color: var(--secondary-green);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
 }
 
 .projects-grid {
@@ -450,6 +460,11 @@ body {
     height: 200px;
     overflow: hidden;
     background: linear-gradient(135deg, var(--light-green) 0%, var(--lighter-green) 100%);
+}
+
+.project-image svg {
+    width: 100%;
+    height: 100%;
 }
 
 .project-image img {
@@ -505,11 +520,12 @@ body {
 /* ========== TECH STACK SECTION ========== */
 .tech-stack {
     padding: 6rem 0;
+    background: rgba(232, 245, 233, 0.4);
 }
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -519,35 +535,67 @@ body {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border-top: 4px solid var(--accent-green);
 }
 
 .tech-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-top-color: var(--secondary-green);
 }
 
 .tech-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
 }
 
 .tech-item h3 {
     color: var(--primary-green);
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .tech-item p {
     color: var(--text-dark);
     font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--lighter-green);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-green) 0%, var(--accent-green) 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.tech-item:hover .skill-fill {
+    animation: fillBar 0.6s ease;
+}
+
+@keyframes fillBar {
+    0% {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 /* ========== CONTACT SECTION ========== */
 .contact {
     padding: 6rem 0;
-    background: rgba(232, 245, 233, 0.5);
+    background: rgba(232, 245, 233, 0.4);
 }
 
 .contact-content {
@@ -576,13 +624,14 @@ body {
     font-family: inherit;
     font-size: 1rem;
     color: var(--text-dark);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(74, 157, 58, 0.2);
 }
 
 .submit-btn {
@@ -594,13 +643,15 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(74, 157, 58, 0.2);
 }
 
 .submit-btn:hover {
     background: var(--secondary-green);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 157, 58, 0.3);
 }
 
 .contact-info {
@@ -630,11 +681,12 @@ body {
     color: var(--accent-green);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
     color: var(--secondary-green);
+    transform: translateY(-2px);
 }
 
 /* ========== FOOTER ========== */
@@ -680,7 +732,7 @@ body {
     }
 
     .tree {
-        opacity: 0.08;
+        opacity: 0.22;
     }
 
     .projects-grid {
@@ -694,6 +746,10 @@ body {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
@@ -739,5 +795,13 @@ body {
 
     .intro-description {
         font-size: 0.9rem;
+    }
+
+    .tech-icon {
+        font-size: 2.5rem;
+    }
+
+    .tree {
+        opacity: 0.15;
     }
 }
