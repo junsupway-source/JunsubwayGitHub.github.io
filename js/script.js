@@ -90,7 +90,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe project cards and tech items
+// Observe project cards, tech items, and contact items
 document.querySelectorAll('.project-card, .tech-item, .info-item').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
@@ -99,7 +99,7 @@ document.querySelectorAll('.project-card, .tech-item, .info-item').forEach(el =>
 // ========== CONSOLE MESSAGE ========== 
 console.log('%c전시의 숲', 'color: #4A9D3A; font-size: 20px; font-weight: bold;');
 console.log('%c전시기획자의 포트폴리오에 오신 것을 환영합니다 🌿', 'color: #2D5016; font-size: 14px;');
-console.log('%c전시를 통해 감정을 ���달하고 공간을 통해 이야기를 나눕니다.', 'color: #3D7D2E; font-size: 12px;');
+console.log('%c전시를 통해 감정을 전달하고 공간을 통해 이야기를 나눕니다.', 'color: #3D7D2E; font-size: 12px;');
 
 // ========== ACTIVE NAV LINK ========== 
 window.addEventListener('scroll', () => {
@@ -150,9 +150,6 @@ function createFallingLeaf() {
     document.body.appendChild(leaf);
 }
 
-// Create falling leaves occasionally (optional - comment out if too much)
-// setInterval(createFallingLeaf, 2000);
-
 // ========== LAZY LOADING FOR IMAGES ========== 
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -174,14 +171,24 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// ========== RESPONSIVE MENU TOGGLE (Optional) ========== 
-function setupResponsiveMenu() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // This would require additional HTML elements in a full implementation
-    // Currently the responsive design is handled by CSS media queries
-}
+// ========== SKILL BAR ANIMATION ========== 
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const skillBars = entry.target.querySelectorAll('.skill-fill');
+            skillBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.transition = 'width 0.8s ease';
+                    bar.style.width = bar.style.width;
+                }, index * 100);
+            });
+            skillObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.tech-grid')?.forEach(grid => {
+    skillObserver.observe(grid);
+});
 
 console.log('%c🌿 All scripts loaded successfully!', 'color: #4A9D3A; font-size: 12px;');
-
