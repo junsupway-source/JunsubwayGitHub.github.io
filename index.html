@@ -22,7 +22,7 @@
                 <div class="profile-avatar">🌿</div>
                 <h1 class="profile-name">전시의 숲</h1>
                 <p class="profile-title">전시기획자</p>
-                <p class="profile-bio">공간을 통해 감정을 전달하고<br>전시를 통해 이야기를 나눕니다</p>
+                <p class="profile-bio">막연한 감동을 데이터로 구조화하여 숲의 흐름을 설계하고,<br>공학적 디테일로 나무의 오차를 제거하는<br>전략적 전시 기획자입니다</p>
             </div>
 
             <nav class="sidebar-nav">
@@ -65,7 +65,7 @@
                     <span class="title-line">만드는</span>
                     <span class="title-line highlight-line">전시기획자</span>
                 </h2>
-                <p class="hero-subtitle">”막연한 감동을 데이터로 구조화하여 숲의 흐름을 설계하고,<br>공학적 디테일로 나무의 오차를 제거하는 전략적 전시 기획자입니다".</p>
+                <p class="hero-subtitle">작은 전시부터 대규모 프로젝트까지,<br>정성스러운 경험을 만들어갑니다.</p>
                 
                 <div class="floating-elements">
                     <div class="floating-plant">
@@ -99,12 +99,22 @@
             <div class="projects-header">
                 <h2 class="section-title">전시 프로젝트</h2>
                 <p class="section-subtitle">큐레이션한 경험들</p>
+                
+                <!-- FILTER BUTTONS -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">모두</button>
+                    <button class="filter-btn" data-filter="color">색채</button>
+                    <button class="filter-btn" data-filter="media">미디어</button>
+                    <button class="filter-btn" data-filter="installation">설치</button>
+                    <button class="filter-btn" data-filter="sound">음향</button>
+                    <button class="filter-btn" data-filter="community">커뮤니티</button>
+                </div>
             </div>
 
             <div class="gallery">
                 <!-- PROJECT 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="color">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -136,8 +146,8 @@
                 </div>
 
                 <!-- PROJECT 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="media">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp2" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -168,8 +178,8 @@
                 </div>
 
                 <!-- PROJECT 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="installation">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp3" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -200,8 +210,8 @@
                 </div>
 
                 <!-- PROJECT 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="sound">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp4" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -232,8 +242,8 @@
                 </div>
 
                 <!-- PROJECT 5 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="community">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp5" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -263,8 +273,8 @@
                 </div>
 
                 <!-- PROJECT 6 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
+                <div class="gallery-item" data-category="media">
+                    <div class="gallery-image" data-lightbox>
                         <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gp6" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -386,6 +396,16 @@
             <p>&copy; 2024 전시의 숲. 모든 권리 보유. 🌿</p>
         </footer>
     </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev">❮</button>
+            <button class="lightbox-next">❯</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
